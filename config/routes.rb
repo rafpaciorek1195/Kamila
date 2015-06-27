@@ -56,4 +56,5 @@ Rails.application.routes.draw do
 
   resources :machines
   root 'machines#index'
+  resources :machine_photos
 end

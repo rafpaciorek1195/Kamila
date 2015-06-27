@@ -17,3 +17,6 @@
   <td> <%= @machine.Description %></td>
 </tr>
 </table>
+<% @machine.machine_photos.each do |m| %>
+<%= image_tag(m.photo_url)%>
+<% end %> 

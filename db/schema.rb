@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627082001) do
+ActiveRecord::Schema.define(version: 20150627101554) do
+
+  create_table "machine_photos", force: :cascade do |t|
+    t.integer  "machine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo_url"
+  end
+
+  add_index "machine_photos", ["machine_id"], name: "index_machine_photos_on_machine_id"
 
   create_table "machines", force: :cascade do |t|
     t.string   "Type"

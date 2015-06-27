@@ -1,0 +1,14 @@
+<h1> Photos: </h1>
+
+<table>
+<tr>
+  <th> Machine id </th>
+  <th> Photo </th>
+</tr>
+<% @machine_photos.each do |m| %>
+<tr>
+  <td> <%= m.machine_id %></td>
+  <td> <%= image_tag(m.photo_url)%></td>
+</tr>
+<% end %>
+</table>

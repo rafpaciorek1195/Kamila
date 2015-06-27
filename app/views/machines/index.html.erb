@@ -10,6 +10,7 @@
   <th> Show </th>
   <th> Delete </th>
   <th> Edit </th>
+  <th> Add Photo </th>
 </tr>
 <% @machines.each do |m| %>
 <tr>
@@ -21,6 +22,8 @@
   <td> <%= link_to 'Show', machine_path(m) %> </td>
   <td> <%= link_to 'Delete', machine_path(m), method: :delete %> </td>
   <td> <%= link_to 'Edit', edit_machine_path(m) %> </td>
+  <td> <%= link_to 'Add photo', new_machine_photo_path(m) %> </td>
 </tr>
 <% end %>
 </table>
+<p><%= link_to 'Create', new_machine_path %></p>
