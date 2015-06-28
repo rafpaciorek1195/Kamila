@@ -1,5 +1,5 @@
-<%= simple_form_for @machine_photo do |f| %>
-<%= f.input :machine_id, collection: Machine.pluck(:Type, :id) %>
-<%= f.input :photo_url %>
+<%= simple_form_for [@machine, @machine_photo]  do |f| %>
+<%= f.input :machine_id, include_blank: false, collection: [[@machine.Type, @machine.id]] + Machine.pluck(:Type, :id).reject { |a| a[1].to_i == @machine.id}%>
+<%= f.input :photo_url%>
 <%= f.button :submit %>
 <% end %>

@@ -1,5 +1,6 @@
 class MachinePhotosController < ApplicationController
   def new
+    @machine = Machine.find(params[:machine_id])
     @machine_photo = MachinePhoto.new
   end
 

@@ -54,7 +54,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :machines
+  resources :machines do
+    resources :machine_photos
+  end
+  
   root 'machines#index'
-  resources :machine_photos
+
 end
